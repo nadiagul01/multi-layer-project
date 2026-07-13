@@ -229,3 +229,24 @@ __pycache__/
 
 # Ignore Flickr8k images
 data/flickr8k/Images/
+# Python virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Flickr8k raw images
+data/flickr8k/Images/
+
+# Processed images and tensors
+data/processed/images/
+*.pt
+
+# Operating system files
+.DS_Store
+Thumbs.db
