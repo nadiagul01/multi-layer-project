@@ -1,0 +1,4 @@
+run_name,learning_rate,train_size,final_train_loss,greedy_BLEU,greedy_ROUGE-1,greedy_ROUGE-L,greedy_METEOR,beam_BLEU,beam_ROUGE-1,beam_ROUGE-L,beam_METEOR
+exp1_baseline,5e-05,200,2.4891,21.78,52.36,48.71,45.09,23.59,53.45,50.67,46.55
+exp2_high_lr,0.0001,200,2.4488,18.89,50.6,47.71,45.24,23.76,53.59,50.87,49.42
+exp3_large_subset,5e-05,500,2.2905,21.68,53.59,49.77,46.78,22.87,53.59,50.35,47.58

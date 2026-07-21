@@ -250,3 +250,33 @@ data/processed/images/
 # Operating system files
 .DS_Store
 Thumbs.db
+# Dataset - large files not suitable for version control
+data/flickr8k/Images/
+data/flickr8k/captions.txt
+data/processed/
+
+# Model checkpoints (1GB+)
+notebooks/outputs/best_model/checkpoint/
+
+# MLflow local artifacts directory
+mlruns/
+
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Backup folder
+backup/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+# Model weights (too large for GitHub)
+*.safetensors
