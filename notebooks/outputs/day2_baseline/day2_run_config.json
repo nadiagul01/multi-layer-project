@@ -1,0 +1,17 @@
+{
+  "model_name": "Salesforce/blip-image-captioning-base",
+  "sample_size": 300,
+  "random_seed": 42,
+  "generation_config": {
+    "max_new_tokens": 30,
+    "num_beams": 5,
+    "early_stopping": true
+  },
+  "metrics": {
+    "BLEU": 20.37,
+    "ROUGE-1": 50.73,
+    "ROUGE-2": 27.21,
+    "ROUGE-L": 47.77,
+    "METEOR": 36.88
+  }
+}
