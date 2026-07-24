@@ -1,0 +1,197 @@
+[
+  {
+    "image": "2774705720_1cb85812dc.jpg",
+    "generated_caption": "a couple sitting on a bench in a park",
+    "reference_captions": [
+      "A couple sits on a shaded bench with a view of trees and a large building .",
+      "A couple sitting on a bench in a park",
+      "A man and a woman on a bench facing a building with trees along the front of it .",
+      "Two people are sitting on a wooden bench by trees in front of a white building .",
+      "Two people sit on a park bench admiring the trees and large building they face ."
+    ],
+    "meteor": 99.93,
+    "category": "good"
+  },
+  {
+    "image": "428483413_b9370baf72.jpg",
+    "generated_caption": "a man and a woman walking by a store window",
+    "reference_captions": [
+      "a blond girl standing in front of a large metal fan",
+      "a man and woman walking past a record shop",
+      "A woman and a man are passing by a window displaying a record .",
+      "A woman and a man stand outside a store .",
+      "A woman with dirty blonde hair and sunglasses and a man with dark hair stand in front of a record store ."
+    ],
+    "meteor": 82.42,
+    "category": "good"
+  },
+  {
+    "image": "3703107969_175da4b276.jpg",
+    "generated_caption": "a man doing a trick on a bike",
+    "reference_captions": [
+      "a boy performs a stunt on a BMX bike .",
+      "A man does a bicycle trick on a concrete obstacle .",
+      "a man doing tricks on a bmx bike",
+      "An extreme bicyclist is performing a jump with his bicycle and rotating the bicycle while he is in the air .",
+      "Person doing a trick bike move in a skatepark ."
+    ],
+    "meteor": 79.34,
+    "category": "good"
+  },
+  {
+    "image": "3126752627_dc2d6674da.jpg",
+    "generated_caption": "two men playing basketball",
+    "reference_captions": [
+      "A basketball player shooting while another player is trying to block his shot .",
+      "A basketball player tries to block another .",
+      "Two basketball players reaching for a ball .",
+      "Two men are playing Basketball",
+      "two men jump for the basketball ."
+    ],
+    "meteor": 76.53,
+    "category": "good"
+  },
+  {
+    "image": "2953861572_d654d9b6f2.jpg",
+    "generated_caption": "a dog running in the sand",
+    "reference_captions": [
+      "a black dog with a blue tag running on a beach",
+      "A brown dog runs down the sandy beach .",
+      "A brown dog runs in the sand .",
+      "Black dog running across sand .",
+      "The brown dog is running across the sand ."
+    ],
+    "meteor": 75.5,
+    "category": "good"
+  },
+  {
+    "image": "1072153132_53d2bb1b60.jpg",
+    "generated_caption": "the dog is black and white",
+    "reference_captions": [
+      "A black and white dog catches a toy in midair .",
+      "A dog and a tennis ball .",
+      "A dog is jumping to catch a object thrown at it ,",
+      "A dog leaps while chasing a tennis ball through a grassy field .",
+      "A multicolor dog jumping to catch a tennis ball in a grassy field ."
+    ],
+    "meteor": 35.71,
+    "category": "interesting"
+  },
+  {
+    "image": "1100214449_d10861e633.jpg",
+    "generated_caption": "water fountain in front of building",
+    "reference_captions": [
+      "A boy in s striped shirt is jumping in front of a water fountain .",
+      "A boy is jumping off the side of a running stone water fountain in front of a building .",
+      "A happy boy is jumping in front OD city fountain .",
+      "A little boy is jumping in front of a fountain .",
+      "A little boy is playfully jumping off the side of a fountain ."
+    ],
+    "meteor": 35.71,
+    "category": "interesting"
+  },
+  {
+    "image": "1876536922_8fdf8d7028.jpg",
+    "generated_caption": "two dogs playing in the water",
+    "reference_captions": [
+      "Two dogs are running through water carrying a rope and red float in their mouths .",
+      "Two dogs carry a toy out of the ocean .",
+      "Two dogs carrying a red toy in their mouths and running in water .",
+      "Two dogs carry one object while wading in the ocean .",
+      "Two dogs run through the water and both hold the same toy in their mouths ."
+    ],
+    "meteor": 35.71,
+    "category": "interesting"
+  },
+  {
+    "image": "3359636318_39267812a0.jpg",
+    "generated_caption": "a group of people walking down the street",
+    "reference_captions": [
+      "A group of people are standing in front of some stores .",
+      "People stand on a sidewalk outside of retail stores .",
+      "People walking or talking on a city street .",
+      "Several people in front of stores .",
+      "Two people are talking outside of the video game shop next door to the mobile phone store ."
+    ],
+    "meteor": 35.46,
+    "category": "interesting"
+  },
+  {
+    "image": "2021613437_d99731f986.jpg",
+    "generated_caption": "a young boy playing with a basketball ball",
+    "reference_captions": [
+      "A boy dribbles a basketball in the gymnasium .",
+      "A boy dribbling a basketball in a gym .",
+      "A boy wearing a Steve Nash shirt dribbles a basketball on an indoor court .",
+      "A child in a gray t-shirt is bouncing a basketball on a basketball court .",
+      "One little boy dribbles his basketball ."
+    ],
+    "meteor": 35.46,
+    "category": "interesting"
+  },
+  {
+    "image": "3738685861_8dfff28760.jpg",
+    "generated_caption": "a wooden fence behind the boy",
+    "reference_captions": [
+      "A blond child is playing with a metal yard ornament .",
+      "A child dressed in blue sits next to plants .",
+      "A child in a blur shirt playing in a flower bed .",
+      "A child plays outside by a garden .",
+      "A small child is sitting playing with an adornment in a small garden ."
+    ],
+    "meteor": 6.41,
+    "category": "poor"
+  },
+  {
+    "image": "3564007203_df2b8010f1.jpg",
+    "generated_caption": "the horse is brown",
+    "reference_captions": [
+      "A man is talking to a mounted policeman outside a stadium .",
+      "A man talks to a mounted policeman .",
+      "A policeman on a horse surrounded by on-lookers .",
+      "A police officer on a horse stands in front of a red brick , multistory building .",
+      "A police woman riding on a brown horse next to a man in a black jacket ."
+    ],
+    "meteor": 6.37,
+    "category": "poor"
+  },
+  {
+    "image": "2852982055_8112d0964f.jpg",
+    "generated_caption": "the water is splashing",
+    "reference_captions": [
+      "a woman is looking away from two small children playing in a fountain .",
+      "Two children and an adult are near the fountain .",
+      "Two children and a woman are playing in a water fountain .",
+      "Two children playing in public fountains",
+      "Woman , with two children playing in outdoor fountain ."
+    ],
+    "meteor": 5.32,
+    "category": "poor"
+  },
+  {
+    "image": "2474918824_88660c7757.jpg",
+    "generated_caption": "the sky is clear and blue",
+    "reference_captions": [
+      "A guy tries to climb a stone cliff while his friend helps him .",
+      "A man in a red shirt climbs a rock while another man stands behind to help him .",
+      "A man in a red shirt is learning how to climb a cliff .",
+      "A man in brown is helping a man in red climb a rock .",
+      "A man wearing a brown sweatshirt helps a man in red climb a rock ."
+    ],
+    "meteor": 3.79,
+    "category": "poor"
+  },
+  {
+    "image": "3184112120_6ddcd98016.jpg",
+    "generated_caption": "two people standing next to each other",
+    "reference_captions": [
+      "A girl is touching a man 's ear in front of a tree while another man leans in .",
+      "a girl touches the side of a young man 's head , while another young man watches .",
+      "A young woman touching a young man 's cheek while a friend looks on",
+      "Girl touches young man 's face as young man in pink shirt observes , leafy background .",
+      "Three people are near a tree and the woman touches one of the men 's faces ."
+    ],
+    "meteor": 3.12,
+    "category": "poor"
+  }
+]
