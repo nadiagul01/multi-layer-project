@@ -1,0 +1,15 @@
+stages:
+  prepare_data:
+    cmd: echo "Data prepared in Week 1 preprocessing"
+    deps:
+      - data/flickr8k/captions.txt
+      - data/flickr8k/Images
+    outs:
+      - data/processed
+
+  inference:
+    cmd: python -m src.inference
+    deps:
+      - src/inference.py
+      - src/model.py
+      - src/data_loader.py
