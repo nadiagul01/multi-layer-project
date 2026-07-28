@@ -1,0 +1,5 @@
+outs:
+- md5: 984c5c3f4888d9ae1388e2a3051e9e97
+  size: 3319294
+  hash: md5
+  path: captions.txt
