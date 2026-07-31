@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+transformers
+Pillow
+matplotlib
+numpy
+pandas
+nltk
