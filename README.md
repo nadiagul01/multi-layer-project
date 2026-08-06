@@ -76,103 +76,32 @@ Built with a full **MLOps production stack**: experiment tracking (MLflow), data
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
----
-
-## 📁 Project Structure
-
-```
-multi-layer-project/
-│
-├── app/                              # API & Web interfaces
-│   ├── main.py                       #   FastAPI REST API (/caption, /health)
-│   ├── gradio_app.py                 #   Gradio interactive UI
-│   └── outputs/                      #   Generated Grad-CAM overlay images
-│
-├── src/                              # Modular Python codebase
-│   ├── data_loader.py                #   Dataset loading, splits, PyTorch Dataset
-│   ├── model.py                      #   BLIP model loading, freezing, checkpoints
-│   ├── inference.py                  #   Caption generation & BLEU/ROUGE/METEOR eval
-│   └── xai.py                        #   Grad-CAM for ViT & perturbation analysis
-│
-├── notebooks/                        # Weekly experiment notebooks
-│   ├── week1/                        #   EDA, preprocessing, library setup
-│   ├── week2/                        #   Zero-shot BLIP, fine-tuning, MLflow
-│   └── week3/                        #   XAI: Grad-CAM, LIME, comparison analysis
-│
-├── tests/
-│   └── test_pipeline.py              # 20 pytest unit tests
-│
-├── scripts/
-│   ├── register_model.py             # MLflow model registry automation
-│   └── export_onnx.py                # ONNX model export for optimized inference
-│
-├── data/                             # Dataset (DVC-tracked, not in git)
-│   ├── flickr8k/                     #   8,091 images + captions
-│   ├── processed/                    #   Preprocessed outputs
-│   └── xai_examples/                 #   15 curated XAI examples
-│
-├── blip-image-captioning/            # Hugging Face Spaces deployment
-│   ├── app.py                        #   Gradio app for HF Spaces
-│   ├── requirements.txt              #   HF Spaces dependencies
-│   └── README.md                     #   HF Spaces metadata
-│
-├── .github/workflows/ci.yml          # GitHub Actions CI/CD pipeline
-├── Dockerfile                        # Docker container build recipe
-├── render.yaml                       # Render deployment configuration
-├── dvc.yaml                          # DVC pipeline definition
-├── requirements.txt                  # Main Python dependencies
-├── requirements-docker.txt           # Docker-specific deps (CPU PyTorch)
-├── requirements-render.txt           # Render-specific deps (CPU PyTorch)
-├── streamlit_app.py                  # Streamlit web interface
-└── presentation.html                 # Final presentation slides
-```
-
----
-
-## 🚀 Quick Start
-
-### Option 1: Run Locally
-
+Setup
 ```bash
-# Clone the repository
 git clone https://github.com/nadiagul01/multi-layer-project.git
 cd multi-layer-project
-
-# Create virtual environment
 python -m venv venv
-venv\Scripts\activate              # Windows
-# source venv/bin/activate         # macOS/Linux
-
-# Install dependencies
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install transformers Pillow matplotlib numpy fastapi uvicorn python-multipart
-
-# Start the FastAPI server
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-```
+venv\Scripts\activate
+pip install -r requirements.txt
 
 Open **http://localhost:8000/docs** for the interactive Swagger UI.
-
-### Option 2: Run with Docker
-
-```bash
-# Build the Docker image (~5 min first time)
-docker build -t blip-captioning-api .
-
-# Run the container
-docker run -p 8000:8000 blip-captioning-api
 ```
 
-### Option 3: Gradio Interactive UI
+### Gradio Interactive UI
 
 ```bash
+pip install gradio
 python app/gradio_app.py
 # Open http://localhost:7860
+### FastAPI:
+pip install fastapi uvicorn python-multipart
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+# Open http://localhost:8000/docs
 ```
 
 ### Option 4: Live Demo
 
-🔗 **[Try it on Hugging Face Spaces →](https://huggingface.co/spaces/Nadiagul/blip-captioning)**
+🔗 **[Try it on Gradio →]()**
 
 ---
 
@@ -206,24 +135,12 @@ curl -X POST "http://localhost:8000/caption" -F "file=@photo.jpg"
 
 All experiments tracked with **MLflow** (6 runs + registered production model).
 
-| Run | Configuration | METEOR | Notes |
-|-----|--------------|--------|-------|
-| `zero_shot_blip_baseline` | No fine-tuning | 36.88 | Baseline |
-| `exp1_baseline` | lr=5e-5, 200 images | 46.55 | First fine-tune |
-| `exp2_high_lr` | lr=1e-4, 200 images | 49.42 | Higher learning rate |
-| `exp3_large_subset` | lr=5e-5, 500 images | 47.58 | ✅ **Selected baseline** |
-| `blip_text_decoder_finetune` | Initial training | — | Loss tracked |
-| `week3_xai_analysis` | XAI artifacts | — | Grad-CAM + comparison |
+Metric	Zero-Shot	Fine-Tuned	Improvement
+BLEU	20.37	22.87	+2.50
+ROUGE-1	50.73	53.59	+2.86
+METEOR	36.88	47.58	+10.70
 
-> **Selected model:** `exp3_large_subset` — chosen for overall consistency, lowest training loss, and robust generalization on unseen images.
-
-### View MLflow Dashboard
-
-```bash
-cd notebooks/week2
-mlflow ui --backend-store-uri sqlite:///mlflow.db
-# Open http://localhost:5000
-```
+Selected configuration: lr=5e-5, 500 training images, beam search (5 beams)
 
 ---
 
@@ -240,7 +157,6 @@ Three complementary XAI methods were applied to understand how the model generat
 ### Key Findings
 
 - ✅ **Correct captions**: Model focuses on the main subject → METEOR ~83
-- ❌ **Incorrect captions**: Attention is diffuse/misplaced (background instead of subject) → METEOR ~5
 - 🎯 **Insight**: Focused attention on the primary subject strongly correlates with caption quality
 
 ---
@@ -259,18 +175,6 @@ Test coverage includes:
 - Data loader: file loading, caption parsing, dataset splits, edge cases
 - Inference: caption generation, evaluation metrics, decoding strategies
 - Model: loading, freezing, device handling
-
----
-
-## 📅 Weekly Progress
-
-| Week | Focus | Key Deliverables |
-|------|-------|-----------------|
-| **Week 1** | Data Preparation | Flickr8k EDA, text/image preprocessing, vocabulary building, Git workflow |
-| **Week 2** | Model Development | Zero-shot BLIP → fine-tuning, 6 MLflow experiments, +29% METEOR improvement |
-| **Week 3** | Explainability | Grad-CAM heatmaps, LIME perturbation, correct vs incorrect analysis |
-| **Week 4** | Production Pipeline | Code refactoring, DVC, MLflow registry, pytest (20 tests), FastAPI, Docker |
-| **Week 5** | Deployment & CI/CD | GitHub Actions, Gradio/Streamlit UIs, HF Spaces deployment, ONNX export |
 
 ---
 
@@ -293,28 +197,20 @@ Test coverage includes:
 | **Model Export** | ONNX (1.12× faster inference) |
 
 ---
+CI/CD
+GitHub Actions runs on every push: flake8 linting, pytest, Docker build (on merge to main)
 
+ONNX Export
+bash
+python scripts/export_onnx.py
+# Result: 1.12x faster inference (1079ms vs 1211ms)
+Technologies
+PyTorch, Transformers, BLIP, NLTK, FastAPI, Gradio, Docker, MLflow, DVC, pytest, GitHub Actions, ONNX
 ## 🚢 Deployment
 
 ### Hugging Face Spaces
 
 The Gradio app is deployed at: **[huggingface.co/spaces/Nadiagul/blip-captioning](https://huggingface.co/spaces/Nadiagul/blip-captioning)**
-
-To deploy your own copy:
-1. Create a new Space on Hugging Face (SDK: Gradio)
-2. Upload the contents of `blip-image-captioning/` to the Space repository
-3. The Space will auto-build and deploy
-
-### Render
-
-```bash
-# Using render.yaml (Blueprint deployment)
-# Connect your GitHub repo to Render → it reads render.yaml automatically
-
-# Or manually:
-# Build: pip install -r requirements-render.txt
-# Start: uvicorn app.main:app --host 0.0.0.0 --port $PORT
-```
 
 ### Docker
 
@@ -323,18 +219,10 @@ docker build -t blip-captioning-api .
 docker run -p 8000:8000 blip-captioning-api
 ```
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 👩‍💻 Author
 
 **Nadia Gul**  
-AI/ML Internship — National University of Computer and Emerging Sciences (NUCES/FAST), Islamabad  
+AI/ML  — National University of Computer and Emerging Sciences (NUCES/FAST), Islamabad  
 Mentor: **Dr. Mateen Yaqoob**
 
 [![GitHub](https://img.shields.io/badge/GitHub-nadiagul01-181717?logo=github)](https://github.com/nadiagul01)
