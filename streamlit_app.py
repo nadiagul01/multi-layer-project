@@ -17,14 +17,22 @@ if uploaded is not None:
     with col1:
         st.image(image, caption="Uploaded Image", use_container_width=True)
     with st.spinner("Generating caption..."):
-        buf = io.BytesIO()
-        image.save(buf, format="JPEG")
-        response = requests.post(API_URL, data=buf.getvalue())
-        if response.status_code == 200:
-            result = response.json()
-            caption = result[0].get("generated_text", "No caption") if isinstance(result, list) else str(result)
-        else:
-            caption = "Error: " + str(response.status_code)
+        try:
+            buf = io.BytesIO()
+            image.save(buf, format="JPEG")
+            headers = {}
+            if "HF_TOKEN" in st.secrets:
+                headers["Authorization"] = "Bearer " + st.secrets["HF_TOKEN"]
+            response = requests.post(API_URL, headers=headers, data=buf.getvalue(), timeout=60)
+            if response.status_code == 200:
+                result = response.json()
+                caption = result[0].get("generated_text", "No caption") if isinstance(result, list) else str(result)
+            elif response.status_code == 503:
+                caption = "Model is loading, please try again in 30 seconds..."
+            else:
+                caption = "Error: " + str(response.status_code)
+        except Exception as e:
+            caption = "Connection error - please try again"
     with col2:
         st.success("Caption Generated!")
         st.markdown("### " + caption)
