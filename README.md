@@ -23,7 +23,7 @@ An end-to-end **multimodal AI pipeline** that generates image captions using [BL
 
 Built with a full **MLOps production stack**: experiment tracking (MLflow), data versioning (DVC), REST API (FastAPI), containerization (Docker), and CI/CD (GitHub Actions).
 
-### Key Highlights
+## Key Highlights
 
 | Metric | Value |
 |--------|-------|
