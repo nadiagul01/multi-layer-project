@@ -46,7 +46,8 @@ Built with a full **MLOps production stack**: experiment tracking (MLflow), data
 ## System Architecture
 
 <div align="center">
-  <img src="slides_images/architecture_diagram.jpg" alt="System Architecture" width="840">
+ <img width="1376" height="768" alt="architecture_diagram" src="https://github.com/user-attachments/assets/a6feeabf-20c6-48fd-89f9-66e33a0981c7" />
+
 </div>
 
 The **model pipeline** encodes the image with a frozen BLIP Vision Transformer, generates a caption with the fine-tuned text decoder, and taps the encoder for Grad-CAM and LIME explanations. Around it sit a **serving layer** (FastAPI, Gradio, Docker) and an **MLOps layer** (MLflow, DVC, GitHub Actions, pytest).
