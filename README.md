@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🖼️ Explainable Image Captioning with BLIP
+# Explainable Image Captioning with BLIP
 
 *Multimodal AI • Visual Explanations • Production MLOps Pipeline*
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 An end-to-end **multimodal AI pipeline** that generates image captions using [BLIP](https://huggingface.co/Salesforce/blip-image-captioning-base) (Bootstrapping Language-Image Pre-training) and provides **visual explanations** via Grad-CAM heatmaps — showing which image regions influenced each caption.
 
@@ -35,7 +35,7 @@ Built with a full **MLOps production stack**: experiment tracking (MLflow), data
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Image Captioning** — Upload any image, receive a natural-language description.
 - **Visual Explanations** — Grad-CAM heatmaps show which image regions influenced the caption.
@@ -46,7 +46,7 @@ Built with a full **MLOps production stack**: experiment tracking (MLflow), data
 
 ---
 
-## 🔗 Live Demo
+## Live Demo
 
 Try it on Hugging Face Spaces → **[Nadiagul/blip-image-captioning](https://huggingface.co/spaces/Nadiagul/blip-image-captioning)**
 
@@ -54,7 +54,7 @@ Upload any image and receive a caption plus an explainability heatmap in real ti
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -94,7 +94,7 @@ Upload any image and receive a caption plus an explainability heatmap in real ti
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 Open **http://localhost:8000/docs** for the interactive Swagger UI.
 
@@ -109,7 +109,7 @@ Open **http://localhost:8000/docs**.
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
@@ -134,7 +134,7 @@ curl -X POST "http://localhost:8000/caption" -F "file=@photo.jpg"
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 pytest tests/test_pipeline.py -v -m "not slow"   # fast tests (~2 min)
@@ -143,7 +143,7 @@ pytest tests/test_pipeline.py -v                 # all tests
 
 ---
 
-## 📊 MLflow — Experiment Tracking & Registry
+##  MLflow — Experiment Tracking & Registry
 
 ```bash
 cd notebooks/week2
@@ -162,7 +162,7 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 ---
 
-## 🔍 Explainability (XAI)
+## Explainability (XAI)
 
 | Method | What it shows | Applied to |
 |--------|---------------|------------|
@@ -174,7 +174,7 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 ---
 
-## 📅 Weekly Progress
+## Weekly Progress
 
 | Week | Focus | Key Deliverables |
 |------|-------|------------------|
@@ -186,7 +186,7 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category | Tools |
 |----------|-------|
@@ -202,7 +202,7 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Nadia Gul** — [GitHub](https://github.com/nadiagul01)
 
