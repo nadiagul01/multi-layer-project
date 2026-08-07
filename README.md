@@ -5,8 +5,8 @@
 *Multimodal AI • Visual Explanations • Production MLOps Pipeline*
 
 <a href="https://www.python.org/downloads/release/python-3110/"><img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="Python 3.11"></a>
-<a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.1-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch"></a>
-<a href="https://huggingface.co/Salesforce/blip-image-captioning-base"><img src="https://img.shields.io/badge/Model-BLIP-FFD21E" alt="BLIP"></a>
+<a href="https://pytorch.org/"><img src="https://PyTorch-2.1-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch"></a>
+<a href="https://blip-image-captioning-base"><img src="https://img.shields.io/badge/Model-BLIP-FFD21E" alt="BLIP"></a>
 <a href="https://github.com/nadiagul01/multi-layer-project/actions"><img src="https://img.shields.io/github/actions/workflow/status/nadiagul01/multi-layer-project/ci.yml?label=CI%2FCD&logo=github" alt="CI/CD"></a>
 <a href="https://huggingface.co/spaces/Nadiagul/blip-image-captioning"><img src="https://img.shields.io/badge/Spaces-Live_Demo-blue" alt="HF Spaces"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
